@@ -90,7 +90,7 @@ class Burger:
             raise ValueError("Количество протеинов в бургере должно быть положительным числом, больше нуля")
         self.proteins = proteins
 
-    def adding_cutlets(self, num_of_cutlets: int):
+    def adding_cutlets(self, num_of_cutlets: int, max_amount = 5):
         """
         Добавление котлет в бургер
         :param num_of_cutlets: количество добавленных котлет
@@ -99,8 +99,8 @@ class Burger:
         """
         if not isinstance(num_of_cutlets, int):
             raise TypeError("Количество котлет может быть типа int ")
-        if num_of_cutlets <= 0:
-            raise ValueError("Количество котлет должно быть положительным числом, больше нуля")
+        if num_of_cutlets <= 0 or num_of_cutlets > max_amount:
+            raise ValueError("Количество котлет должно быть положительным числом, больше нуля, и не больше, чем максимально возможное количество")
         ...
 
 
